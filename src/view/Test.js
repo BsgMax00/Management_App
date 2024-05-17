@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 import { collection, getDocs } from "firebase/firestore"
 
 //import service for database
-import database from "../utils/FirebaseConfiguration"
+import database from "../util/FirebaseConfiguration"
 
 const Test = () => {
     const [testing, setTesting] = useState(undefined);

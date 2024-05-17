@@ -2,9 +2,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 //import pages to add to the routes
-import Home from "./views/Home";
-import Test from "./views/Test";
-import TodoPage from "./views/TodoPage";
+import Home from "./view/Home";
+import Test from "./view/Test";
+import TodoPage from "./view/TodoPage";
 
 function App() {
   return (
