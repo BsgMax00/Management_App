@@ -3,6 +3,7 @@ import { useContext } from "react"
 
 //import context
 import { TodoContext } from "../../context/TodoContext"
+import TodoRow from "../atoms/TodoCard"
 
 const TodoTable = () => {
     const {todoList, loading} = useContext(TodoContext)
@@ -17,11 +18,13 @@ const TodoTable = () => {
     
     return (
         <div className="col-6 border">
-            <ul>
+            <div className="row">
                 {todoList.map((todoItem) => (
-                    <li key={todoList.indexOf(todoItem)}>{todoList.indexOf(todoItem)}: {todoItem.data.Task}</li>
+                    <div key={todoList.indexOf(todoItem)} className="my-3 col-4">
+                        <TodoRow todoItem={todoItem}/>
+                    </div>
                 ))}
-            </ul>
+            </div>
         </div>
     )
 }
