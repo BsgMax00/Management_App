@@ -10,7 +10,7 @@ export const TodoContext = createContext()
 const TodoProvider = (props) => {
     const [isLoading, setLoading] = useState(true);
     const [todoList, setTodoList] = useState([]);
-    const [selectedTodoItem, setSelectedTodoItem] = useState(null)
+    const [currentTodoItemId, setCurrentTodoItemId] = useState(null);
 
     const fetchData = async() => {
         await getDocs(collection(database, "TodoCollection"))
@@ -27,7 +27,7 @@ const TodoProvider = (props) => {
 
 
     return (
-        <TodoContext.Provider value={{ todoList: todoList, loading: isLoading, selectedTodoItem: [selectedTodoItem, setSelectedTodoItem] }}>
+        <TodoContext.Provider value={{ todoList, currentTodoItemId, setCurrentTodoItemId, isLoading }}>
             {props.children}
         </TodoContext.Provider>
     )
